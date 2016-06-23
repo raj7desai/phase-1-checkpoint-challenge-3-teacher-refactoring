@@ -12,6 +12,11 @@ class School
   attr_reader :age, :phase
   attr_accessor :name
 
+  def initialize(options = {})
+    @age = options.fetch(:age, 0)
+    @name = options.fetch(:name, "")
+  end
+
   include SchoolMethods
 end
 
@@ -22,8 +27,7 @@ class Student < School
 
   def initialize(options = {})
     @phase = 1
-    @age = options.fetch(:age, 0)
-    @name = options.fetch(:name, "")
+    super
   end
 
   def set_phase(num)

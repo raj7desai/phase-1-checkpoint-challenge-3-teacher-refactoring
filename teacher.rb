@@ -46,11 +46,10 @@ class Teacher < TeachingStaff
 
   def initialize(options={})
     @phase = 3
-    @age = options.fetch(:age, 0)
-    @name = options.fetch(:name, "")
     @target_raise = 1000
     @rating_min = 90
     @response = "Listen, class, this is how everything works, fo SHO! *drops flat-out insane knowledge bomb* ... You're welcome. *saunters away*"
+    super
   end
 end
 
