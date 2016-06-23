@@ -26,12 +26,16 @@ module TeachingStaffMethods
     end
     response
   end
+
+  def teach_stuff
+    self.response
+  end
 end
 
 # TEACHING STAFF CLASS
 
 class TeachingStaff < School
-  attr_reader :salary, :target_raise, :rating_min
+  attr_reader :salary, :target_raise, :rating_min, :response
   include TeachingStaffMethods
 end
 
@@ -46,14 +50,7 @@ class Teacher < TeachingStaff
     @name = options.fetch(:name, "")
     @target_raise = 1000
     @rating_min = 90
-  end
-
-  def teach_stuff
-    response = ""
-    response += "Listen, class, this is how everything works, fo SHO! "
-    response += "*drops flat-out insane knowledge bomb* "
-    response += "... You're welcome. *saunters away*"
-    response
+    @response = "Listen, class, this is how everything works, fo SHO! *drops flat-out insane knowledge bomb* ... You're welcome. *saunters away*"
   end
 end
 
